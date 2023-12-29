@@ -1,0 +1,6 @@
+table.vertical {
+    tr { display: block; float: left; }
+    th, td { display: block; }
+}
+
+td:empty::before{content:'\00a0';visibility:hidden}

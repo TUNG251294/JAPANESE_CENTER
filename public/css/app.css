@@ -1,0 +1,23 @@
+@media (min-width: 768px) {
+    .pl-md-4, .px-md-4 {
+      padding-left: 0 !important; /* hoặc padding-left: unset !important; */
+    }
+  }
+.main-sidebar {
+        width: 100%;
+    }
+
+.myloader {
+  position: fixed;
+  min-height: 100vh;
+  top: 0;
+  background-image: url("https://media3.giphy.com/media/KG4PMQ0jyimywxNt8i/giphy.gif?cid=ecf05e47uqzqe9qit5cdf4u7y9fqsw10slzt251h73nx9qri&rid=giphy.gif&ct=g");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pageContents {
+  position: fixed;
+  min-height: 100vh;
+  top: 0;
+}    

@@ -1,0 +1,55 @@
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: mini_project2
+-- ------------------------------------------------------
+-- Server version	8.2.0
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `attendances`
+--
+
+DROP TABLE IF EXISTS `attendances`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `attendances` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `attendance_date` date NOT NULL,
+  `is_present` tinyint(1) NOT NULL DEFAULT '0',
+  `course_user_id` bigint unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `attendances_course_user_id_foreign` (`course_user_id`),
+  CONSTRAINT `attendances_course_user_id_foreign` FOREIGN KEY (`course_user_id`) REFERENCES `course_user` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attendances`
+--
+
+LOCK TABLES `attendances` WRITE;
+/*!40000 ALTER TABLE `attendances` DISABLE KEYS */;
+INSERT INTO `attendances` VALUES (1,'2023-12-04',1,4),(2,'2023-12-04',1,3),(3,'2023-12-04',1,5),(4,'2023-12-04',1,2),(5,'2023-12-04',1,6),(6,'2023-12-08',1,4),(7,'2023-12-08',1,3),(8,'2023-12-08',1,5),(9,'2023-12-08',1,2),(10,'2023-12-08',1,6),(11,'2023-12-01',1,4),(12,'2023-12-01',1,3),(13,'2023-12-01',1,5),(14,'2023-12-01',1,2),(15,'2023-12-01',0,6),(16,'2023-12-11',1,4),(17,'2023-12-11',1,3),(18,'2023-12-11',1,5),(19,'2023-12-11',1,2),(20,'2023-12-11',1,6),(21,'2023-12-15',1,4),(22,'2023-12-15',1,3),(23,'2023-12-15',1,5),(24,'2023-12-15',0,2),(25,'2023-12-15',1,6),(26,'2023-12-18',1,4),(27,'2023-12-18',1,3),(28,'2023-12-18',1,5),(29,'2023-12-18',1,2),(30,'2023-12-18',1,6),(31,'2023-12-22',1,4),(32,'2023-12-22',1,3),(33,'2023-12-22',1,5),(34,'2023-12-22',1,2),(35,'2023-12-22',1,6),(36,'2023-12-25',1,4),(37,'2023-12-25',1,3),(38,'2023-12-25',1,5),(39,'2023-12-25',1,2),(40,'2023-12-25',1,6),(41,'2023-12-29',0,4),(42,'2023-12-29',1,3),(43,'2023-12-29',1,5),(44,'2023-12-29',1,2),(45,'2023-12-29',1,6),(46,'2023-12-02',1,4),(47,'2023-12-02',1,3),(48,'2023-12-02',1,5),(49,'2023-12-02',1,2),(50,'2023-12-02',1,6),(51,'2024-01-01',1,4),(52,'2024-01-01',1,3),(53,'2024-01-01',1,5),(54,'2024-01-01',1,2),(55,'2024-01-01',0,6),(56,'2024-01-06',1,4),(57,'2024-01-06',1,3),(58,'2024-01-06',1,5),(59,'2024-01-06',1,2),(60,'2024-01-06',1,6),(61,'2024-01-08',1,4),(62,'2024-01-08',1,3),(63,'2024-01-08',1,5),(64,'2024-01-08',1,2),(65,'2024-01-08',1,6),(66,'2024-01-13',1,4),(67,'2024-01-13',1,3),(68,'2024-01-13',1,5),(69,'2024-01-13',1,2),(70,'2024-01-13',1,6),(71,'2024-01-20',1,4),(72,'2024-01-20',1,3),(73,'2024-01-20',1,5),(74,'2024-01-20',1,2),(75,'2024-01-20',1,6);
+/*!40000 ALTER TABLE `attendances` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-12-22 13:37:26
